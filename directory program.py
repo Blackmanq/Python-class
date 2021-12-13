@@ -6,10 +6,13 @@ def info():
     Name = input("Name:")
     Adress = input("Address:")
     PN = input("Phone Number:")
-    saveFile = open(file, "w")
-    saveFile.write(f"{Name},{Adress},{PN}")
-    file_contents = saveFile.read()
-    print(file_contents)
+    information = [Name, Adress, PN]
+    saveFile = open(file, "a+")
+    combined = "\n" + Name + "," + Adress + "," + PN
+    saveFile.write(combined)
+    contents = saveFile.read()
+    print(combined)
+    saveFile.close()
     return
 
 
